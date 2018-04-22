@@ -14,6 +14,9 @@ app.on('ready', () => {
 
 const menuTemplate = [
     {
-        lable: 'File'
+        lable: 'File',
+        submenu: [
+            { lable: 'New Todo'}
+        ]
     }
 ]
