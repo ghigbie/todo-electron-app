@@ -1,13 +1,24 @@
 <head>
     <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Todo List App</h1>
+        <h2 class="spaced">Todo List App</h2>
         <ul id="todo-list">
             
         </ul>
     </div>
+
+    <div class="footer container fixed-bottom">
+        <div class="container button-holder"></div>
+            <button class="btn btn-outline-primary spaced">Add Todo</button>
+            <button class="btn btn-outline-danger spaced" 
+                    id="remove-button"
+                    onclick="removeTodos">Remove All</button>
+        </div>
+    </div>
+
     <script>
         const electron = require('electron');
         const { ipcRenderer } = electron;
@@ -19,5 +30,7 @@
             document.querySelector('ul').appendChild(li);
         });
 
+        document.getElementById('remove-button')
+            .addEventListener('click', () => document.querySelector('ul').innerHTML = '');
     </script>
 </body>
