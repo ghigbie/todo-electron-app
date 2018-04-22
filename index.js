@@ -5,6 +5,10 @@ const { app, BrowserWindow, Menu } = electron;
 let mainWindow;
 let addWindow;
 
+//this sets a boolean to determie if the operating system is OSX or not
+let isDarwin = () => process.platform === 'darwin'? true : false;
+
+
 app.on('ready', () => {
     console.log('Electron is running');
     mainWindow = new BrowserWindow({}); //the empty object is for configuration options
@@ -29,17 +33,15 @@ const menuTemplate = [
         label: 'File',
         submenu: [
             { label: 'New Todo',
-              accelerator: process.platform === 'darwin' ? 'Command+N' : 'Crtl+N',
+              accelerator: isDarwin ? 'Command+N' : 'Crtl+N',
               click(){ createAddWindow();}
             },
             { label: 'Quit',
-              accelerator: process.platform === 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+              accelerator: isDarwin ? 'Command+Q' : 'Ctrl+Q',
               click(){ app.quit();}
             }
         ]
     }
 ];
 
-if(process.platform === 'darwin'){
-    menuTemplate.unshift({});
-}
+isDarwin && menuTemplate.unshift({});
