@@ -9,6 +9,8 @@ app.on('ready', () => {
     console.log('Electron is running');
     mainWindow = new BrowserWindow({}); //the empty object is for configuration options
     mainWindow.loadURL(`file://${__dirname}/main.html`);
+    mainWindow.on('click', () => app.quit());
+    
     const mainMenu = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(mainMenu);
 });
