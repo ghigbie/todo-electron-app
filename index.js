@@ -20,11 +20,11 @@ const menuTemplate = [
             { label: 'Quit',
               accelerator: (() => {
                   if(process.platform === 'darwin'){
-                    return 'Command+Q'
+                    return 'Command+Q';
                   }else{
-                    return 'Ctrl+Q'
+                    return 'Ctrl+Q';
                   }
-              }),
+              })(),
               click(){
                   app.quit();
               }
