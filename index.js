@@ -52,7 +52,7 @@ if (process.env.NODE_ENV !== 'production'){
             {
                 label: 'Toggle Developer Tools',
                 accelerator: isDarwin ? 'Command+I' : 'Ctrl+Q',
-                click(item, focusedWindow) {
+                click(item, focusedWindow) { //focused window is which window is use by the developer
                     focusedWindow.toggleDevTools();
                 }
             }
