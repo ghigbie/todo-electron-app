@@ -57,6 +57,9 @@ if (process.env.NODE_ENV !== 'production'){
         label: 'DEVELOPER',
         submenu: [
             {
+                role: 'reload'
+            },
+            {
                 label: 'Toggle Developer Tools',
                 accelerator: isDarwin ? 'Command+Alt+I' : 'Ctrl+Shift+I',
                 click(item, focusedWindow) { //focused window is which window is use by the developer

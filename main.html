@@ -16,9 +16,7 @@
             const li = document.createElement('li');
             const text = document.createTextNode(todo);
             li.appendChild(text);
-
-            document.querySelector('ul').appendChild('li');
-            document.querySelector('ul').appendChild(`<li>${todo}</li>`);
+            document.querySelector('ul').appendChild(li);
         });
 
     </script>
