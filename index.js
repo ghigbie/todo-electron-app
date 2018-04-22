@@ -6,6 +6,6 @@ let mainWindow;
 
 app.on('ready', () => {
     console.log('Electron is running');
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({}); //the empty object is for configuration options
     mainWindow.loadURL(`file://${__dirname}/main.html`);
 });

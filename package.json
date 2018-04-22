@@ -1,13 +1,23 @@
 {
   "name": "todo-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a simple todo app built with electron.",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "electron" : "electron"
-  }, 
+    "electron": "electron ."
+  },
   "dependencies": {
     "electron": "^1.8.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghigbie/todo-electron-app.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/ghigbie/todo-electron-app/issues"
+  },
+  "homepage": "https://github.com/ghigbie/todo-electron-app#readme"
 }
