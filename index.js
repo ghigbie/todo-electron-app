@@ -26,6 +26,7 @@ const createAddWindow = () => {
         title: 'Add New Todo'
     });
     addWindow.loadURL(`file://${__dirname}/add.html`);
+    addWindow.on('closed', () => addWindow = null); //this helps with memory management. It gives a null reference for addwindow after the window is closed
 }
 
 ipcMain.on('todo:add', (event, todo) => {
