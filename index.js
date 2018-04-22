@@ -5,7 +5,7 @@ const { app, BrowserWindow, Menu } = electron;
 let mainWindow;
 let addWindow;
 
-//this sets a boolean to determie if the operating system is OSX or not
+//this function sets a boolean to determie if the operating system is OSX or Widows
 let isDarwin = () => process.platform === 'darwin'? true : false;
 
 
@@ -45,3 +45,16 @@ const menuTemplate = [
 ];
 
 isDarwin && menuTemplate.unshift({});
+if (process.env.NODE_ENV !== 'production'){
+    menuTemplate.push({
+        label: 'DEVELOPER',
+        submenu: [
+            {
+                label: 'Toggle Developer Tools',
+                click(item, focusedWindow) {
+                    focusedWindow.toggleDevTools();
+                }
+            }
+        ]
+    });
+}
