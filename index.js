@@ -51,6 +51,7 @@ if (process.env.NODE_ENV !== 'production'){
         submenu: [
             {
                 label: 'Toggle Developer Tools',
+                accelerator: isDarwin ? 'Command+I' : 'Ctrl+Q',
                 click(item, focusedWindow) {
                     focusedWindow.toggleDevTools();
                 }
