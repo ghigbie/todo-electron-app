@@ -12,7 +12,8 @@
 
     <div class="footer container fixed-bottom">
         <div class="container button-holder"></div>
-            <button class="btn btn-outline-primary spaced">Add Todo</button>
+            <button class="btn btn-outline-primary spaced"
+                    id="add-button">Add Todo</button>
             <button class="btn btn-outline-danger spaced" 
                     id="remove-button"
                     onclick="removeTodos">Remove All</button>
@@ -31,6 +32,9 @@
         });
 
         ipcRenderer.on('todo:clear', () => document.querySelector('ul').innerHTML = '');
+
+        document.getElementById('add-button')
+            .addEventListener('click', () => ipcRenderer.send('todo:open'));
 
         document.getElementById('remove-button')
             .addEventListener('click', () => document.querySelector('ul').innerHTML = '');

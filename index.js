@@ -34,6 +34,8 @@ ipcMain.on('todo:add', (event, todo) => {
     addWindow.close(); //this closes the add window after a todo has been submited
 })
 
+ipcMain.on('todo:open', (event) => createAddWindow());
+
 
 const menuTemplate = [
     {
