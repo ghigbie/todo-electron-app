@@ -30,6 +30,8 @@
             document.querySelector('ul').appendChild(li);
         });
 
+        ipcRenderer.on('todos:remove', (event) => document.querySelector('ul').innerHTML = '');
+
         document.getElementById('remove-button')
             .addEventListener('click', () => document.querySelector('ul').innerHTML = '');
     </script>

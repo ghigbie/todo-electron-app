@@ -39,13 +39,20 @@ const menuTemplate = [
     {
         label: 'File',
         submenu: [
-            { label: 'New Todo',
-              accelerator: isDarwin ? 'Command+N' : 'Crtl+N',
-              click(){ createAddWindow();}
+            { 
+                label: 'New Todo',
+                accelerator: isDarwin ? 'Command+N' : 'Ctrl+N',
+                click(){ createAddWindow();}
             },
-            { label: 'Quit',
-              accelerator: isDarwin ? 'Command+Q' : 'Ctrl+Q',
-              click(){ app.quit();}
+            {
+                lable: 'Clear Todos',
+                accelerator: isDarwin ? 'Command+C' : 'Ctrl+C',
+                click(){() => mainWindow.webContents.send('todos:remove', null)}
+            },
+            { 
+                label: 'Quit',
+                accelerator: isDarwin ? 'Command+Q' : 'Ctrl+Q',
+                click(){ app.quit();}
             }
         ]
     }
