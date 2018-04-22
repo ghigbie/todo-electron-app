@@ -45,9 +45,9 @@ const menuTemplate = [
                 click(){ createAddWindow();}
             },
             {
-                lable: 'Clear Todos',
+                label: 'Clear Todos',
                 accelerator: isDarwin ? 'Command+C' : 'Ctrl+C',
-                click(){() => mainWindow.webContents.send('todos:remove', null)}
+                click(){mainWindow.webContents.send('todo:clear')}
             },
             { 
                 label: 'Quit',
