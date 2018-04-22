@@ -4,5 +4,22 @@
 <body>
     <div class="container">
         <h1>Todo List App</h1>
+        <ul id="todo-list">
+            
+        </ul>
     </div>
+    <script>
+        const electron = require('electron');
+        const { ipcRenderer } = electron;
+
+        ipcRenderer.on('todo:add', (event, todo) => {
+            const li = document.createElement('li');
+            const text = document.createTextNode(todo);
+            li.appendChild(text);
+
+            document.querySelector('ul').appendChild('li');
+            document.querySelector('ul').appendChild(`<li>${todo}</li>`);
+        });
+
+    </script>
 </body>
